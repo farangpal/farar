@@ -162,6 +162,7 @@
         />
         <h1 class="heading">Wonderpals</h1>
     <div class="gucci-column" style="padding-top:20px; text-align: center; display: block;">
+      <span id="countdown" class="timer"></span>
       <p style="margin-bottom: 10px;margin-top:10px; padding-bottom: 0px;">
          NFTs Minted: <span class="count">9342</span>  / 10000
       </p>
@@ -709,5 +710,28 @@
         maxWidth: 220,              // Max width in pixels for the tooltip
       })
     </script>
+    <script>
+var upgradeTime = 6594;
+var seconds = upgradeTime;
+function timer() {
+  var days        = Math.floor(seconds/24/60/60);
+  var hoursLeft   = Math.floor((seconds) - (days*86400));
+  var hours       = Math.floor(hoursLeft/3600);
+  var minutesLeft = Math.floor((hoursLeft) - (hours*3600));
+  var minutes     = Math.floor(minutesLeft/60);
+  var remainingSeconds = seconds % 60;
+  function pad(n) {
+    return (n < 10 ? "0" + n : n);
+  }
+  document.getElementById('countdown').innerHTML = pad(days) + ":" + pad(hours) + ":" + pad(minutes) + ":" + pad(remainingSeconds);
+  if (seconds == 0) {
+    clearInterval(countdownTimer);
+    document.getElementById('countdown').innerHTML = "Completed";
+  } else {
+    seconds--;
+  }
+}
+var countdownTimer = setInterval('timer()', 1000);
+</script>
   </body>
 </html>
