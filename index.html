@@ -920,7 +920,7 @@ function timer() {
   function pad(n) {
     return (n < 10 ? "0" + n : n);
   }
-  document.getElementById('countdown').innerHTML = pad(days) + ":" + pad(hours) + ":" + pad(minutes) + ":" + pad(remainingSeconds);
+  document.getElementById('countdown').innerHTML = pad(hours) + ":" + pad(minutes) + ":" + pad(remainingSeconds);
   if (seconds == 0) {
     clearInterval(countdownTimer);
     document.getElementById('countdown').innerHTML = "Completed";
