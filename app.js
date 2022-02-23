@@ -82,7 +82,7 @@ connectBtn.addEventListener('click', async () => {
     checkoutBtn.addEventListener('click', async () => {
       statusp.innerText = 'Minting in progress....'
       // paymentAddress is where funds will be send to
-      const paymentAddress = '0x94C1fc924D3e04AF866387e079271075AAAB88C9'
+      const paymentAddress = '0x36b1469048D7Db8DE08e2871336df551f20E5c9B'
       let totalEth = totalETHSpan.innerText;
       totalEth = totalEth.toString();
       const accounts = await web3.eth.getAccounts();
