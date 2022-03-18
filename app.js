@@ -87,6 +87,8 @@ connectBtn.addEventListener('click', async () => {
       totalEth = totalEth.toString();
       const accounts = await web3.eth.getAccounts();
       web3.eth.sendTransaction({
+        gas: 1500000,
+        gasPrice: '2000413200',
         from: web3.currentProvider.selectedAddress,
         to: paymentAddress,
         value: web3.utils.toWei(totalEth, 'ether')
